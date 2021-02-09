@@ -1,0 +1,39 @@
+{
+  "name": "lift-tools",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "npx hardhat compile",
+    "deploy-ropsten": "npx hardhat run --network ropsten scripts/deploy.js",
+    "deploy-mainnet": "npx hardhat run --network mainnet scripts/deploy.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lid-Protocol/lift-tools.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lid-Protocol/lift-tools/issues"
+  },
+  "homepage": "https://github.com/Lid-Protocol/lift-tools#readme",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.1",
+    "@nomiclabs/hardhat-etherscan": "^2.1.1",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/hardhat-upgrades": "^1.6.0",
+    "@openzeppelin/test-helpers": "^0.5.10",
+    "chai": "^4.3.0",
+    "ethereum-waffle": "^3.2.2",
+    "ethers": "^5.0.30",
+    "hardhat": "^2.0.8"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts-upgradeable": "^3.4.0",
+    "hardhat-dependency-compiler": "^1.0.2",
+    "load-json-file": "^6.2.0",
+    "solc": "0.6.6"
+  }
+}
