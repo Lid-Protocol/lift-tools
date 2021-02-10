@@ -1,0 +1,11 @@
+{
+    "networks":
+    {
+      "ropsten":{
+        "minBalance": 1.0
+      },
+      "mainnet":{
+        "minBalance": 1.0
+      }
+    }
+  }

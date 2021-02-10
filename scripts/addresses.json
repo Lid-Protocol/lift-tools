@@ -1,0 +1,13 @@
+{
+  "networks":
+  {
+    "ropsten":{
+      "WhitelistingTool": "0xf35E8C23f04bC878b1bcf2d1C5F5C5E6e45A2cb6",
+      "LiftToken": "0x83f4F1D62B0e9B293e39eF1FC396E552440a278f"
+    },
+    "mainnet":{
+      "WhitelistingTool": "",
+      "LiftToken": ""
+    }
+  }
+}

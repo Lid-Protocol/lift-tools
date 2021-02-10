@@ -4,4 +4,5 @@ interface IWhitelistingTool {
     function whitelistAll(address[] calldata _addrs) external;
     function unwhitelistAll(address[] calldata _addrs) external;
     function isWhitelisted(address _addr) external view returns (bool);
+    function getWhitelistedAddrs() external view returns (address[] memory);
 }

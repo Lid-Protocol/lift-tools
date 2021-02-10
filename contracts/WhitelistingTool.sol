@@ -10,6 +10,7 @@ contract WhitelistingTool is
     OwnableUpgradeable
 {
     mapping(address => bool) public whitelistedAddrs;
+    address[] private addressList;
 
     event Whitelisting(address addr);
     event Unwhitelisting(address addr);
@@ -20,6 +21,7 @@ contract WhitelistingTool is
 
     function whitelist(address _addr) public onlyOwner {
         if(!whitelistedAddrs[_addr]) {
+            addressList.push(_addr);
             whitelistedAddrs[_addr] = true;
             emit Whitelisting(_addr);
         }
@@ -27,7 +29,12 @@ contract WhitelistingTool is
 
     function unwhitelist(address _addr) public onlyOwner {
         if (whitelistedAddrs[_addr]) {
-            delete whitelistedAddrs[_addr];
+            for (uint i = 0; i < addressList.length; i ++) {
+                if (addressList[i] == _addr) {
+                    delete addressList[i];
+                }
+            }
+            whitelistedAddrs[_addr] = false;
             emit Unwhitelisting(_addr);
         }
     }
@@ -46,5 +53,9 @@ contract WhitelistingTool is
 
     function isWhitelisted(address _addr) external view override returns (bool) {
         return whitelistedAddrs[_addr] || false;
+    }
+
+    function getWhitelistedAddrs() external view override returns (address[] memory) {
+        return addressList;
     }
 }

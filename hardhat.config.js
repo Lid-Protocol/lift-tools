@@ -42,12 +42,12 @@ module.exports = {
     artifacts: "./artifacts"
   },
   mocha: {
-    timeout: 20000
+    timeout: 200000
   },
   etherscan: {
     apiKey: "DUMQWHVAG4IXE2287UAKE3ZD144YJSZSTI"
   },
   dependencyCompiler: {
-    paths: [],
+    paths: ["@lidprotocol/xlock-contracts/contracts/ERC20/ERC20Blacklist.sol"],
   }
 }
