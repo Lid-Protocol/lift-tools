@@ -13,7 +13,7 @@ async function main() {
 
     console.log("Retriving low balance addresses...");
     addrs = await Promise.all(addrs.map(async (addr) => {
-      const balance = ((await liftToken.balanceOf(addr)) / (10**18)).toFixed(3);
+      const balance = ((await liftToken.balanceOf(addr, {}, settings.blockNumber)) / (10**18)).toFixed(3);
       if (balance < settings.minBalance) return addr
       return ""
     }));

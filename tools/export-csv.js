@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const csv = require('fast-csv');
 const addresses = loadJsonFile.sync("./scripts/addresses.json").networks.ropsten;
+const settings = loadJsonFile.sync("./scripts/settings.json").networks.ropsten
 
 async function main() {
   try {
@@ -19,7 +20,7 @@ async function main() {
       csvStream.pipe(ws).on('end', () => process.exit(0));
       
       await Promise.all(addrs.map(async (addr) => {
-        const balance = ((await liftToken.balanceOf(addr)) / (10**18)).toFixed(3).toString();
+        const balance = ((await liftToken.balanceOf(addr, {}, settings.blockNumber)) / (10**18)).toFixed(3).toString();
         csvStream.write({ "Address": addr, "LIFT Balance": balance });
       }));
       csvStream.end();

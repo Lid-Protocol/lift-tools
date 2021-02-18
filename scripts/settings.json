@@ -2,10 +2,12 @@
     "networks":
     {
       "ropsten":{
-        "minBalance": 1.0
+        "minBalance": 1.0,
+        "blockNumber": 9684268
       },
       "mainnet":{
-        "minBalance": 1.0
+        "minBalance": 1.0,
+        "blockNumber": 11877943
       }
     }
   }
