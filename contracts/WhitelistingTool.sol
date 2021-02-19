@@ -20,7 +20,7 @@ contract WhitelistingTool is
     }
 
     function whitelist(address _addr) public onlyOwner {
-        if(!whitelistedAddrs[_addr]) {
+        if (!whitelistedAddrs[_addr]) {
             addressList.push(_addr);
             whitelistedAddrs[_addr] = true;
             emit Whitelisting(_addr);
@@ -29,7 +29,7 @@ contract WhitelistingTool is
 
     function unwhitelist(address _addr) public onlyOwner {
         if (whitelistedAddrs[_addr]) {
-            for (uint i = 0; i < addressList.length; i ++) {
+            for (uint256 i = 0; i < addressList.length; i++) {
                 if (addressList[i] == _addr) {
                     delete addressList[i];
                 }
@@ -39,23 +39,41 @@ contract WhitelistingTool is
         }
     }
 
-    function whitelistAll(address[] calldata _addrs) external override onlyOwner {
-        for (uint i = 0; i < _addrs.length; i ++) {
+    function whitelistAll(address[] calldata _addrs)
+        external
+        override
+        onlyOwner
+    {
+        for (uint256 i = 0; i < _addrs.length; i++) {
             whitelist(_addrs[i]);
         }
     }
 
-    function unwhitelistAll(address[] calldata _addrs) external override onlyOwner {
-        for (uint i = 0; i < _addrs.length; i ++) {
+    function unwhitelistAll(address[] calldata _addrs)
+        external
+        override
+        onlyOwner
+    {
+        for (uint256 i = 0; i < _addrs.length; i++) {
             unwhitelist(_addrs[i]);
         }
     }
 
-    function isWhitelisted(address _addr) external view override returns (bool) {
+    function isWhitelisted(address _addr)
+        external
+        view
+        override
+        returns (bool)
+    {
         return whitelistedAddrs[_addr] || false;
     }
 
-    function getWhitelistedAddrs() external view override returns (address[] memory) {
+    function getWhitelistedAddrs()
+        external
+        view
+        override
+        returns (address[] memory)
+    {
         return addressList;
     }
 }
