@@ -13,6 +13,8 @@
     "unwhitelist-csv-mainnet": "npx hardhat run --network mainnet tools/unwhitelist-csv.js",
     "export-csv-ropsten": "npx hardhat run --network ropsten tools/export-csv.js",
     "export-csv-mainnet": "npx hardhat run --network mainnet tools/export-csv.js",
+    "export-applicant-csv-ropsten": "npx hardhat run --network ropsten tools/export-csv.js",
+    "export-applicant-csv-mainnet": "npx hardhat run --network mainnet tools/export-applicant-csv.js",
     "unwhitelist-auto-ropsten": "npx hardhat run --network ropsten tools/unwhitelist-auto.js",
     "unwhitelist-auto-mainnet": "npx hardhat run --network mainnet tools/unwhitelist-auto.js"
   },

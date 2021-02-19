@@ -6,8 +6,8 @@
       "LiftToken": "0x83f4F1D62B0e9B293e39eF1FC396E552440a278f"
     },
     "mainnet":{
-      "WhitelistingTool": "",
-      "LiftToken": ""
+      "WhitelistingTool": "0x05392d7b8CD4Aad3A35ccB21648154e54F29F9dB",
+      "LiftToken": "0x359b04965a756052b335d962826a6292b40cb343"
     }
   }
 }
