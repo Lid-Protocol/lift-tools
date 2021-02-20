@@ -8,7 +8,7 @@ const settings = loadJsonFile.sync("./scripts/settings.json").networks.mainnet
 
 async function main() {
   const addrs = [];
-  fs.createReadStream(path.resolve(__dirname, 'csv', 'whitelist.csv'))
+  fs.createReadStream(path.resolve(__dirname, 'csv', 'applicants.csv'))
     .pipe(csv.parse({ headers: true }))
     .on('error', error => console.error(error))
     .on('data', row => addrs.push(row.Address))

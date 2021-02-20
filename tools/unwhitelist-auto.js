@@ -17,7 +17,7 @@ async function main() {
       if (balance < settings.minBalance) return addr
       return ""
     }));
-    
+    console.log("To unwhitelist:",addrs)
     console.log("Calling unwhitelistAll...");
     await whitelistingTool.unwhitelistAll(addrs.filter(addr => addr));
 
