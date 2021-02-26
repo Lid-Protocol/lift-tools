@@ -15,7 +15,7 @@ async function main() {
       const addrs = await whitelistingTool.getWhitelistedAddrs();
 
       console.log("Writing CSV file...");
-      const ws = fs.createWriteStream(path.resolve(__dirname, 'csv', 'export.csv'));
+      const ws = fs.createWriteStream(path.resolve(__dirname, 'csv', 'whitelist-export.csv'));
       const csvStream = csv.format({ headers: true });
       csvStream.pipe(ws).on('end', () => process.exit(0));
       
