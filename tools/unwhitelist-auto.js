@@ -1,7 +1,7 @@
 const { ethers } = require("hardhat")
 const loadJsonFile = require('load-json-file');
-const addresses = loadJsonFile.sync("./scripts/addresses.json").networks.ropsten;
-const settings = loadJsonFile.sync("./scripts/settings.json").networks.ropsten
+const addresses = loadJsonFile.sync("./scripts/addresses.json").networks.mainnet;
+const settings = loadJsonFile.sync("./scripts/settings.json").networks.mainnet
 
 async function main() {
   try {
@@ -17,7 +17,7 @@ async function main() {
       if (balance < settings.minBalance) return addr
       return ""
     }));
-    
+    console.log("To unwhitelist:",addrs)
     console.log("Calling unwhitelistAll...");
     await whitelistingTool.unwhitelistAll(addrs.filter(addr => addr));
 

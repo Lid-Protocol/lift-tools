@@ -3,7 +3,7 @@ const loadJsonFile = require('load-json-file');
 const fs = require('fs');
 const path = require('path');
 const csv = require('fast-csv');
-const addresses = loadJsonFile.sync("./scripts/addresses.json").networks.ropsten;
+const addresses = loadJsonFile.sync("./scripts/addresses.json").networks.mainnet;
 
 async function main() {
   const addrs = [];
